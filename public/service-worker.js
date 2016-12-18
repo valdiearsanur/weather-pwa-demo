@@ -49,7 +49,7 @@
 
 
 /* eslint-disable quotes, comma-spacing */
-var PrecacheConfig = [["/images/clear.png","e17de36d2c2ddf7b068892fa4678cd31"],["/images/cloudy-scattered-showers.png","855f638a52b7fbc1ec2a3d596fedbd28"],["/images/cloudy.png","6b2148e05e5fe4bf2a218438afcb6d3c"],["/images/cloudy_s_sunny.png","827577d4371bd0c83789fac7a2fe1546"],["/images/fog.png","44f56cff88530b5e3315890d6c209ac2"],["/images/ic_add_white_24px.svg","c3379830302abe84f64db87b5bac9faa"],["/images/ic_refresh_white_24px.svg","f73272d4efd233a85e8c649d26126f01"],["/images/partly-cloudy.png","a2e10546a6f7000e1b7d5846ba492f9b"],["/images/rain.png","5a2600b1199d1c95da554a5f97861c04"],["/images/scattered-showers.png","ec178dbbcd45abb9db4be616801df3b0"],["/images/sleet.png","15ee1fe8d87a5b1ca604eb56729f3f08"],["/images/snow.png","6f9fa355f32b353a18a1dd3f89ac3fd7"],["/images/thunderstorm.png","c4df123a44c17a1b5d1e8b33b268ea5c"],["/images/wind.png","c1136285b55a50c206f0a96f64080767"],["/index.html","4e314dfd76802c314c0d8349a89e4df4"],["/scripts/app.js","45b3acd8e9bc275683bc7cf7c8c47548"],["/scripts/localforage-1.4.0.js","e7b60fed032f5137e2e5813d2c06f3a3"],["/styles/style.css","b45aa192eeec939e3b99af1fc3178bd7"],["/styles/style.min.css","fa0e17c206efe3701358208a61b2e5e1"]];
+var PrecacheConfig = [["/assets/images/clear.png","e17de36d2c2ddf7b068892fa4678cd31"],["/assets/images/cloudy-scattered-showers.png","855f638a52b7fbc1ec2a3d596fedbd28"],["/assets/images/cloudy.png","6b2148e05e5fe4bf2a218438afcb6d3c"],["/assets/images/cloudy_s_sunny.png","827577d4371bd0c83789fac7a2fe1546"],["/assets/images/fog.png","44f56cff88530b5e3315890d6c209ac2"],["/assets/images/ic_add_white_24px.svg","c3379830302abe84f64db87b5bac9faa"],["/assets/images/ic_refresh_white_24px.svg","f73272d4efd233a85e8c649d26126f01"],["/assets/images/partly-cloudy.png","a2e10546a6f7000e1b7d5846ba492f9b"],["/assets/images/rain.png","5a2600b1199d1c95da554a5f97861c04"],["/assets/images/scattered-showers.png","ec178dbbcd45abb9db4be616801df3b0"],["/assets/images/sleet.png","15ee1fe8d87a5b1ca604eb56729f3f08"],["/assets/images/snow.png","6f9fa355f32b353a18a1dd3f89ac3fd7"],["/assets/images/thunderstorm.png","c4df123a44c17a1b5d1e8b33b268ea5c"],["/assets/images/wind.png","c1136285b55a50c206f0a96f64080767"],["/assets/scripts/app.js","53f44c63cff31506f19c8b7c37b0ba9f"],["/assets/scripts/localforage-1.4.0.js","e7b60fed032f5137e2e5813d2c06f3a3"],["/assets/styles/style.css","c0f64ad43a3039e08e0530befa97c3db"],["/assets/styles/style.min.css","1eb6989c70e66cee72b5336ec69d8bc3"],["/index.html","ccfb6a6d39fca6cbcc9e4a6c28d2e270"]];
 /* eslint-enable quotes, comma-spacing */
 var CacheNamePrefix = 'sw-precache-v1--' + (self.registration ? self.registration.scope : '') + '-';
 
@@ -276,7 +276,7 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
-toolbox.router.get(/^http:\/\/api.openweathermap.org\/data\/2.5\/forecast\/daily\?units=metric&cnt=7&APPID=94391138b18139a052b943e0b9d8f840/, toolbox.networkFirst, {"cache":{"name":"weatherData-v3"}});
+toolbox.router.get(/^https:\/\/query\.yahooapis\.com\/v1\/public\/yql\?q=select%20\*%20from%20weather\.forecast%20where%20woeid%20%3D%20[0-9]+%20and%20u%3D%27c%27&format=json/, toolbox.networkFirst, {"cache":{"name":"weatherData-v3"}});
 
 
 
